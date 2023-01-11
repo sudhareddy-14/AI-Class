@@ -1,0 +1,15 @@
+my_list = [1, 2, 3, 4, 5]
+
+my_list.append(6)
+print("List after adding elements using append: ", my_list)
+my_list.extend([7, 8, 9])
+print("List after adding elements using extend: ", my_list)
+
+my_list.remove(7)
+print("List after removing elements using remove: ", my_list)
+
+del my_list[3]
+print("List after removing elements using del: ", my_list)
+
+my_list.pop()
+print("List after removing elements using pop: ", my_list)
