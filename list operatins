@@ -1,0 +1,21 @@
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print("Nested List:", nested_list)
+
+simple_list = [1, 2, 3, 4, 5, 6]
+print("Length of List:", len(simple_list))
+
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+list3 = list1 + list2
+print("Concatenation of Lists:", list3)
+
+print("Membership: ", 3 in simple_list)
+
+for element in simple_list:
+    print(element, end = ' ')
+print()
+
+print("Indexing: ", simple_list[2])
+
+print("Slicing: ", simple_list[1:4])
+
