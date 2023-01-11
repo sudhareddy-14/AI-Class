@@ -1,0 +1,36 @@
+import itertools
+
+def cryptarithmetic(words, result):
+   
+    letters = set(''.join(words) + result)
+    for digit_assignment in itertools.permutations('0123456789', len(letters)):
+       
+        mapping = dict(zip(letters, digit_assignment))
+        
+        if check_equation(words, result, mapping):
+            return mapping
+  
+    return None
+
+def check_equation(words, result, mapping):
+   
+    equation = ''.join(mapping[c] for c in words[0])
+    for word in words[1:]:
+        equation += '+' + ''.join(mapping[c] for c in word)
+    equation += '=' + ''.join(mapping[c] for c in result)
+    
+    if len(set(mapping.values())) != len(mapping):
+        return False
+   
+    for word in words+[result]:
+        if mapping[word[0]] == '0':
+            return False
+    
+    if eval(equation):
+        return True
+    return False
+
+words = ["SEND", "MORE"]
+result = "MONEY"
+print(cryptarithmetic(words, result))
+
